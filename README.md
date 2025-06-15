@@ -103,17 +103,8 @@ Método	Rota	Descrição
 GET	/movement-history	Listar todo o histórico
 GET	/movement-history/:id	Buscar histórico de um produto
 
-🏗️ Estrutura do Projeto
-bash
-Copiar
-Editar
-src/
-├── auth/                # Módulo de autenticação
-├── products/             # Módulo de produtos
-├── movement-history/     # Módulo de histórico de estoque
-├── users/                # Módulo de usuários
-├── app.module.ts         # Módulo principal
-└── main.ts               # Arquivo de bootstrap
+![image](https://github.com/user-attachments/assets/5dda1c1d-c053-46b3-b393-c9df5bb231d4)
+
 🗄️ Banco de Dados (Futuro)
 O projeto está preparado para migrar do armazenamento em memória para banco de dados PostgreSQL, usando TypeORM ou Prisma.
 
