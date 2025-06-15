@@ -1,98 +1,119 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+🏥 CRUD de Estoque para Farmácia — NestJS + Swagger + JWT
+Este projeto é uma API REST desenvolvida com NestJS, que simula o gerenciamento de estoque de uma farmácia. A aplicação permite:
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+✅ Gerenciar produtos (CRUD)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+✅ Controlar histórico de movimentações (entrada/saída de estoque)
 
-## Description
+✅ Autenticação e autorização via JWT
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+✅ Documentação interativa com Swagger
 
-## Project setup
+✅ Preparada para conexão com banco de dados (PostgreSQL)
 
-```bash
-$ npm install
-```
+🚀 Tecnologias Utilizadas
+NestJS — Framework Node.js
 
-## Compile and run the project
+TypeScript
 
-```bash
-# development
-$ npm run start
+JWT — Autenticação
 
-# watch mode
-$ npm run start:dev
+Bcrypt — Criptografia de senhas
 
-# production mode
-$ npm run start:prod
-```
+Swagger — Documentação da API
 
-## Run tests
+PostgreSQL (pronto para integração)
 
-```bash
-# unit tests
-$ npm run test
+Node.js
 
-# e2e tests
-$ npm run test:e2e
+📦 Instalação
+Clone o projeto:
 
-# test coverage
-$ npm run test:cov
-```
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+Instale as dependências:
 
-## Deployment
+bash
+Copiar
+Editar
+npm install
+Execute a aplicação em modo desenvolvimento:
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+bash
+Copiar
+Editar
+npm run start:dev
+📜 Documentação Swagger
+Acesse a documentação interativa em:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+bash
+Copiar
+Editar
+http://localhost:3000/api
+🔐 Autenticação
+🔸 Registro:
+POST /auth/register
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+json
+Copiar
+Editar
+{
+  "username": "admin",
+  "email": "admin@email.com",
+  "password": "123456"
+}
+🔸 Login:
+POST /auth/login
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+json
+Copiar
+Editar
+{
+  "identifier": "admin",
+  "password": "123456"
+}
+✔️ Resposta:
 
-## Resources
+json
+Copiar
+Editar
+{
+  "access_token": "token.jwt.aqui"
+}
+👉 Use esse token no Swagger ou nas requisições no Header:
 
-Check out a few resources that may come in handy when working with NestJS:
+makefile
+Copiar
+Editar
+Authorization: Bearer token.jwt.aqui
+📦 Rotas da API
+🔸 Produtos — /products
+Método	Rota	Descrição
+POST	/products	Criar produto
+GET	/products	Listar todos
+GET	/products/:id	Buscar por ID
+PATCH	/products/:id	Atualizar produto
+DELETE	/products/:id	Deletar produto
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+🔸 Histórico de Movimentações — /movement-history
+Método	Rota	Descrição
+GET	/movement-history	Listar todo o histórico
+GET	/movement-history/:id	Buscar histórico de um produto
 
-## Support
+🏗️ Estrutura do Projeto
+bash
+Copiar
+Editar
+src/
+├── auth/                # Módulo de autenticação
+├── products/             # Módulo de produtos
+├── movement-history/     # Módulo de histórico de estoque
+├── users/                # Módulo de usuários
+├── app.module.ts         # Módulo principal
+└── main.ts               # Arquivo de bootstrap
+🗄️ Banco de Dados (Futuro)
+O projeto está preparado para migrar do armazenamento em memória para banco de dados PostgreSQL, usando TypeORM ou Prisma.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
